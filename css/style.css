@@ -7,6 +7,7 @@ h1#title-menu {
 }
 
 img#background-image {
+  box-sizing: border-box;
   width: 100%;
   padding-top: 20px;
 }
@@ -80,10 +81,10 @@ h1#title-menu {
 
 .sous-menu {
   border-radius: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 11px;
+  margin-right: 11px;
   margin-top: 20px;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   box-shadow: 5px 5px 5px #e7e7e7;
   display: flex;
   overflow: hidden;
@@ -221,7 +222,7 @@ h2#DESSERTS:after {
   }
 }
 
-p#commande {
+button#commande {
   display: flex;
   border-radius: 30px;
   color: white;
@@ -230,11 +231,16 @@ p#commande {
   background: linear-gradient(to bottom right, #e771da, #a35cdc);
   align-items: center;
   padding: 20px;
-  box-shadow: 5px 5px 5px #cecece;
+  box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.8235294118);
   margin-top: 60px;
   margin-left: 50px;
   margin-bottom: 70px;
   margin-right: 50px;
+  width: 70%;
+  border: none;
+}
+button#commande:hover {
+  box-shadow: 10px 10px 10px rgba(206, 206, 206, 0.5333333333);
 }
 
 .bottom-2 {
@@ -305,17 +311,41 @@ footer {
     padding: 20px;
     display: flex;
     align-items: center;
-    margin-left: 90px;
+    margin-left: 30px;
+  }
+  .sous-menu .prix {
+    width: 100px;
+    text-align: right;
+  }
+  .sous-menu .prix p {
+    width: 100%;
   }
   .sous-menu {
     border-radius: 15px;
     margin-left: 25px;
     margin-right: 25px;
     margin-top: 20px;
-    background-color: #f6f6f6;
+    background-color: #ffffff;
     box-shadow: 5px 5px 5px #e7e7e7;
     display: flex;
     overflow: hidden;
+  }
+  button#commande {
+    display: flex;
+    border-radius: 30px;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e771da, #a35cdc);
+    align-items: center;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.82);
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-bottom: 70px;
+    margin-right: 100px;
+    width: 73%;
+    border: none;
   }
 }
 @media (min-width: 1024px) {
@@ -328,17 +358,38 @@ footer {
     padding-top: 20px;
     border-radius: 20px;
   }
+  .sous-menu .content-check {
+    margin-left: 20px;
+  }
   .sous-menu {
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-    background-color: #f6f6f6;
-    box-shadow: 5px 5px 5px #e7e7e7;
+    background-color: #ffffff;
+  }
+  .conteneur-menu {
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 40%;
+    justify-content: space-around;
+  }
+  p#commande {
+    margin-top: 60px;
+    margin-left: 480px;
+    margin-bottom: 70px;
+    margin-right: 480px;
+  }
+  button#commande {
+    display: flex;
+    border-radius: 30px;
+    color: white;
+    height: 50px;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #e771da, #a35cdc);
+    align-items: center;
+    padding: 20px;
+    box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.82);
+    margin-top: 60px;
+    margin-left: 103vh;
+    margin-bottom: 70px;
+    margin-right: 103vh;
+    width: 30%;
+    border: none;
   }
 }
 .loader {
@@ -399,6 +450,8 @@ body {
 
 h1 {
   font-weight: 200;
+  margin-left: 10px;
+  margin-top: 2px;
 }
 
 nav {
@@ -410,6 +463,11 @@ img#logo {
   padding-top: 20px;
   width: 50%;
   padding-bottom: 10px;
+}
+@media (min-width: 1000px) {
+  img#logo {
+    width: 25%;
+  }
 }
 
 .step {
@@ -473,6 +531,8 @@ strong#Fonctionnement {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 i.fa-solid.fa-mobile-screen-button {
@@ -480,11 +540,17 @@ i.fa-solid.fa-mobile-screen-button {
   align-items: center;
   margin-right: 20px;
 }
+i.fa-solid.fa-mobile-screen-button:hover {
+  color: #9356dc;
+}
 
 i.fa-solid.fa-list-ul {
   display: flex;
   align-items: center;
   margin-right: 20px;
+}
+i.fa-solid.fa-list-ul:hover {
+  color: #9356dc;
 }
 
 i.fa-solid.fa-store {
@@ -492,10 +558,15 @@ i.fa-solid.fa-store {
   align-items: center;
   margin-right: 20px;
 }
+i.fa-solid.fa-store:hover {
+  color: #9356dc;
+}
 
 .link p {
   text-decoration: none;
   font-weight: 700;
+  margin-left: 10px;
+  margin-bottom: 0px;
 }
 
 .link {
@@ -505,9 +576,9 @@ i.fa-solid.fa-store {
   border-radius: 20px;
   box-shadow: 4px 4px 4px grey;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 18px;
   margin-top: 30px;
-  margin-right: 10px;
+  margin-right: 18px;
   text-decoration: none;
 }
 .link .conteneur-info {
@@ -520,7 +591,7 @@ i.fa-solid.fa-store {
   color: black;
   align-items: center;
 }
-.link :hover {
+.link:hover {
   background-color: opacity 0.5;
   box-shadow: 8px 8px 8px grey;
 }
@@ -580,14 +651,12 @@ p#new {
   position: absolute;
   margin-left: 220px;
   top: -2%;
+  right: 10px;
+  padding: 8px;
 }
 
 .fonctionnement :hover {
   background-color: #f5edff;
-}
-
-.menu i:hover {
-  color: #9356dc;
 }
 
 h4#choose {
@@ -608,7 +677,6 @@ h4#tasted {
 section.background-restaurant {
   width: 100%;
   background-color: #f6f6f6;
-  border-radius: 20px 20px 0px 0px;
 }
 
 .restaurant-selection img {
@@ -708,10 +776,26 @@ footer {
     width: 45%;
   }
   img#logo-2 {
-    width: 10%;
+    width: 20%;
   }
-  img#logo {
-    width: 25%;
+  p#new {
+    margin-left: 263px;
+  }
+  .fonctionnement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1000px) {
+  p#new {
+    margin-left: 640px;
+  }
+  .link {
+    width: 38%;
   }
 }
 

@@ -5,7 +5,9 @@
 h1#title-menu{
     font-family: 'Shrikhand', cursive; 
 }
+
 img#background-image {
+    box-sizing: border-box;
     width: 100%;
     padding-top: 20px;
 }
@@ -87,10 +89,10 @@ h1#title-menu {
 
 .sous-menu{
     border-radius: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 11px;
+    margin-right: 11px;
     margin-top: 20px;
-    background-color: #f6f6f6;
+    background-color: #ffffff;
     box-shadow: 5px 5px 5px #e7e7e7;
     display: flex;
     overflow: hidden;
@@ -239,7 +241,7 @@ h2#DESSERTS:after {
       }
 }
 
-p#commande {
+button#commande {
     display: flex;
     border-radius: 30px;
     color: white;
@@ -248,11 +250,16 @@ p#commande {
     background: linear-gradient(to bottom right, #e771da, #a35cdc);
     align-items: center;
     padding: 20px;
-    box-shadow: 5px 5px 5px #cecece;
+    box-shadow: 5px 5px 5px #cececed2;
     margin-top: 60px;
     margin-left: 50px;
     margin-bottom: 70px;
     margin-right: 50px;
+    width: 70%;
+    border: none;
+    &:hover{
+        box-shadow: 10px 10px 10px #cecece88;
+    }
 }
 
 .bottom-2 {
@@ -329,7 +336,15 @@ footer{
         padding: 20px;
         display: flex;
         align-items: center;
-        margin-left: 90px;
+        margin-left: 30px;
+    }
+
+    .sous-menu .prix{
+        width: 100px;
+        text-align: right;
+        p{
+            width: 100%;
+        }
     }
 
     .sous-menu {
@@ -337,10 +352,28 @@ footer{
         margin-left: 25px;
         margin-right: 25px;
         margin-top: 20px;
-        background-color: #f6f6f6;
+        background-color: #ffffff;
         box-shadow: 5px 5px 5px #e7e7e7;
         display: flex;
         overflow: hidden;
+    }
+
+    button#commande {
+        display: flex;
+        border-radius: 30px;
+        color: white;
+        height: 50px;
+        justify-content: center;
+        background: linear-gradient(to bottom right, #e771da, #a35cdc);
+        align-items: center;
+        padding: 20px;
+        box-shadow: 5px 5px 5px rgb(206 206 206 / 82%);
+        margin-top: 60px;
+        margin-left: 100px;
+        margin-bottom: 70px;
+        margin-right: 100px;
+        width: 73%;
+        border: none;
     }
 
 }
@@ -356,17 +389,57 @@ footer{
         border-radius: 20px;
     }
 
+    .sous-menu .content-check {
+        margin-left: 20px;
+    }
     .sous-menu {
-        border-radius: 15px;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 20px;
-        background-color: #f6f6f6;
-        box-shadow: 5px 5px 5px #e7e7e7;
+        // border-radius: 15px;
+        // margin-left: 10px;
+        // margin-right: 10px;
+        // margin-top: 20px;
+        background-color: #ffffff;
+        // box-shadow: 5px 5px 5px #e7e7e7;
+        // display: flex;
+        // flex-wrap: wrap;
+        // overflow: hidden;
+        // width: 100%;
+    }
+
+    // .sous-menu .content-price {
+    //     display: flex;
+    //     position: relative;
+    //     margin-right: -174px;
+    //     align-items: center;
+    // }
+
+    .conteneur-menu {
         display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-        width: 40%;
+        justify-content: space-around;
+    }
+
+    p#commande {
+        margin-top: 60px;
+        margin-left: 480px;
+        margin-bottom: 70px;
+        margin-right: 480px;
+    }
+
+    button#commande {
+        display: flex;
+        border-radius: 30px;
+        color: white;
+        height: 50px;
+        justify-content: center;
+        background: linear-gradient(to bottom right, #e771da, #a35cdc);
+        align-items: center;
+        padding: 20px;
+        box-shadow: 5px 5px 5px rgb(206 206 206 / 82%);
+        margin-top: 60px;
+        margin-left: 103vh;
+        margin-bottom: 70px;
+        margin-right: 103vh;
+        width: 30%;
+        border: none;
     }
 }
 
