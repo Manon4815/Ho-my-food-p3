@@ -4,6 +4,15 @@
 
 h1#title-menu {
   font-family: "Shrikhand", cursive;
+  font-size: 26px;
+}
+
+h4#card-info {
+  margin: 0px;
+}
+
+#card-info {
+  margin: 0px;
 }
 
 img#background-image {
@@ -80,52 +89,92 @@ h1#title-menu {
 }
 
 .sous-menu {
+  margin: 0.8rem;
+  overflow: hidden;
+  background-color: white;
+  padding: 0.8rem 0.6rem;
   border-radius: 15px;
-  margin-left: 11px;
-  margin-right: 11px;
-  margin-top: 20px;
-  background-color: #ffffff;
-  box-shadow: 5px 5px 5px #e7e7e7;
+  box-shadow: 0 3px 4px -4px gray;
+  position: relative;
+  /* Hover de la carte */
+}
+.sous-menu .card-text h4 {
+  width: calc(100% - 60px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+.sous-menu .card-info {
   display: flex;
-  overflow: hidden;
+  justify-content: space-between;
 }
-.sous-menu .info {
-  width: 80%;
-  overflow: hidden;
+.sous-menu .card-info p {
+  margin-bottom: 0;
 }
-.sous-menu h3, .sous-menu p {
-  margin: 8px;
+.sous-menu .card-info .ligne_1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.sous-menu .content-price {
-  display: flex;
-  position: relative;
-  margin-right: -60px;
+.sous-menu .card-info .ligne_2 {
+  font-weight: 600;
+  padding-right: 1rem;
 }
-.sous-menu .content-price:hover {
-  margin-right: 0;
-  transition: margin-right 400ms linear;
-}
-.sous-menu .content-price:hover i.fa-solid.fa-circle-check {
-  animation: rotation 400ms linear;
-}
-.sous-menu .content-price .prix {
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-}
-.sous-menu .content-check {
+.sous-menu .card-order {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  transform: translateX(60px);
+  width: 60px;
+  height: 100%;
   background-color: #99e2d0;
-  color: white;
-  padding: 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.sous-menu .card-order i {
+  color: white;
+  font-size: 1.2rem;
+}
+.sous-menu:hover .card-info {
+  animation-name: info;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+@keyframes info {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: calc(100% - 60px);
+  }
+}
+.sous-menu:hover .card-order {
+  animation-name: order;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes order {
+  0% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.sous-menu:hover .card-order i {
+  animation-name: rotation;
+  animation-duration: 0.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 @keyframes rotation {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   100% {
     transform: rotate(360deg);
@@ -232,15 +281,16 @@ button#commande {
   align-items: center;
   padding: 20px;
   box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.8235294118);
-  margin-top: 60px;
-  margin-left: 50px;
-  margin-bottom: 70px;
-  margin-right: 50px;
-  width: 70%;
+  margin: 10px;
   border: none;
 }
 button#commande:hover {
   box-shadow: 10px 10px 10px rgba(206, 206, 206, 0.5333333333);
+}
+
+.content-btn-command {
+  display: flex;
+  justify-content: center;
 }
 
 .bottom-2 {
@@ -305,47 +355,16 @@ footer {
     margin-bottom: 70px;
     margin-right: 235px;
   }
-  .sous-menu .content-check {
-    background-color: #99e2d0;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-  }
-  .sous-menu .prix {
-    width: 100px;
-    text-align: right;
-  }
-  .sous-menu .prix p {
-    width: 100%;
-  }
-  .sous-menu {
-    border-radius: 15px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 20px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #e7e7e7;
-    display: flex;
-    overflow: hidden;
-  }
   button#commande {
-    display: flex;
     border-radius: 30px;
     color: white;
-    height: 50px;
-    justify-content: center;
     background: linear-gradient(to bottom right, #e771da, #a35cdc);
-    align-items: center;
-    padding: 20px;
     box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.82);
-    margin-top: 60px;
-    margin-left: 100px;
-    margin-bottom: 70px;
-    margin-right: 100px;
-    width: 73%;
     border: none;
+  }
+  .content-btn-command {
+    display: flex;
+    justify-content: center;
   }
 }
 @media (min-width: 1024px) {
@@ -358,12 +377,6 @@ footer {
     padding-top: 20px;
     border-radius: 20px;
   }
-  .sous-menu .content-check {
-    margin-left: 20px;
-  }
-  .sous-menu {
-    background-color: #ffffff;
-  }
   .conteneur-menu {
     display: flex;
     justify-content: space-around;
@@ -375,21 +388,18 @@ footer {
     margin-right: 480px;
   }
   button#commande {
-    display: flex;
     border-radius: 30px;
     color: white;
     height: 50px;
     justify-content: center;
     background: linear-gradient(to bottom right, #e771da, #a35cdc);
     align-items: center;
-    padding: 20px;
     box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.82);
-    margin-top: 60px;
-    margin-left: 103vh;
-    margin-bottom: 70px;
-    margin-right: 103vh;
-    width: 30%;
     border: none;
+  }
+  .content-btn-command {
+    display: flex;
+    justify-content: center;
   }
 }
 .loader {
@@ -507,7 +517,7 @@ h2#Reservation {
 h5#Discover {
   display: flex;
   justify-content: center;
-  margin-left: 50px;
+  margin-left: 36px;
 }
 
 h5#explore {
@@ -789,6 +799,9 @@ footer {
     margin-right: 10px;
     flex-direction: row;
   }
+  h5#Discover {
+    margin-left: 12px;
+  }
 }
 @media (min-width: 1000px) {
   p#new {
@@ -796,6 +809,9 @@ footer {
   }
   .link {
     width: 38%;
+  }
+  h5#Discover {
+    margin-left: 14px;
   }
 }
 

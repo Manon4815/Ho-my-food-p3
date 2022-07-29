@@ -3,7 +3,16 @@
 }
 
 h1#title-menu{
-    font-family: 'Shrikhand', cursive; 
+    font-family: 'Shrikhand', cursive;
+    font-size: 26px;
+}
+
+h4#card-info{
+    margin: 0px;
+}
+
+#card-info{
+    margin: 0px;
 }
 
 img#background-image {
@@ -88,61 +97,117 @@ h1#title-menu {
 }
 
 .sous-menu{
-    border-radius: 15px;
-    margin-left: 11px;
-    margin-right: 11px;
-    margin-top: 20px;
-    background-color: #ffffff;
-    box-shadow: 5px 5px 5px #e7e7e7;
-    display: flex;
-    overflow: hidden;
 
-    .info{
-        width: 80%;
-        overflow: hidden;
-    }
-    h3,p{
-        margin: 8px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .content-price{
+    margin: 0.8rem;
+    overflow: hidden;
+    background-color: white;
+    padding: 0.8rem 0.6rem;
+    border-radius: 15px;
+    box-shadow: 0 3px 4px -4px gray;
+    position: relative;
+
+    .card-text {
+        h4 {
+            width: calc(100% - 60px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+        }
+      }
+
+    .card-info {
         display: flex;
-        position: relative;
-        margin-right: -60px;
-        &:hover{
-            margin-right: 0;
-            transition: margin-right 400ms linear;
-            i.fa-solid.fa-circle-check{
-                animation: rotation 400ms linear;
+        justify-content: space-between;
+        p{
+            margin-bottom: 0;
+        }
+        .ligne_1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .ligne_2 {
+            font-weight: 600;
+            padding-right: 1rem;
+        }
+    }
+
+    .card-order {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        transform: translateX(60px);
+        width: 60px;
+        height: 100%;
+        background-color: #99e2d0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        i {
+            color: white;
+            font-size: 1.2rem;
+        }
+    }
+
+      /* Hover de la carte */
+
+    &:hover {
+        .card-info {
+            animation-name: info;
+            animation-duration: 0.4s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+
+            @keyframes info {
+                0% {
+                    width: 100%;
+                }
+
+                100% {
+                    width: calc(100% - 60px);
+                }
             }
         }
-        .prix {
-            display: flex;
-            align-items: center;
-            margin-right: 15px;
-        }
-    }
-    .content-check{
-        background-color:#99e2d0;
-        color: white;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-    }
-    @keyframes rotation {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
+        .card-order {
+            animation-name: order;
+            animation-duration: 0.4s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
 
+          @keyframes order {
+            0% {
+                transform: translateX(60px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+          }
+
+          i {
+                animation-name: rotation;
+                animation-duration: 0.4s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+
+                @keyframes rotation {
+                    0% {
+                        transform: rotate(0);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
    
 }
-  
 
 h2#ENTREES {
     margin: 10px;
@@ -251,16 +316,17 @@ button#commande {
     align-items: center;
     padding: 20px;
     box-shadow: 5px 5px 5px #cececed2;
-    margin-top: 60px;
-    margin-left: 50px;
-    margin-bottom: 70px;
-    margin-right: 50px;
-    width: 70%;
+    margin: 10px;
     border: none;
     &:hover{
         box-shadow: 10px 10px 10px #cecece88;
     }
 }
+
+.content-btn-command {
+    display: flex;
+    justify-content: center;
+  }
 
 .bottom-2 {
     display: flex;
@@ -330,51 +396,17 @@ footer{
         margin-right: 235px;
     }
 
-    .sous-menu .content-check {
-        background-color: #99e2d0;
-        color: white;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        margin-left: 30px;
-    }
-
-    .sous-menu .prix{
-        width: 100px;
-        text-align: right;
-        p{
-            width: 100%;
-        }
-    }
-
-    .sous-menu {
-        border-radius: 15px;
-        margin-left: 25px;
-        margin-right: 25px;
-        margin-top: 20px;
-        background-color: #ffffff;
-        box-shadow: 5px 5px 5px #e7e7e7;
-        display: flex;
-        overflow: hidden;
-    }
-
     button#commande {
-        display: flex;
         border-radius: 30px;
         color: white;
-        height: 50px;
-        justify-content: center;
         background: linear-gradient(to bottom right, #e771da, #a35cdc);
-        align-items: center;
-        padding: 20px;
         box-shadow: 5px 5px 5px rgb(206 206 206 / 82%);
-        margin-top: 60px;
-        margin-left: 100px;
-        margin-bottom: 70px;
-        margin-right: 100px;
-        width: 73%;
         border: none;
     }
+    .content-btn-command {
+        display: flex;
+        justify-content: center;
+      }
 
 }
 
@@ -389,29 +421,6 @@ footer{
         border-radius: 20px;
     }
 
-    .sous-menu .content-check {
-        margin-left: 20px;
-    }
-    .sous-menu {
-        // border-radius: 15px;
-        // margin-left: 10px;
-        // margin-right: 10px;
-        // margin-top: 20px;
-        background-color: #ffffff;
-        // box-shadow: 5px 5px 5px #e7e7e7;
-        // display: flex;
-        // flex-wrap: wrap;
-        // overflow: hidden;
-        // width: 100%;
-    }
-
-    // .sous-menu .content-price {
-    //     display: flex;
-    //     position: relative;
-    //     margin-right: -174px;
-    //     align-items: center;
-    // }
-
     .conteneur-menu {
         display: flex;
         justify-content: space-around;
@@ -425,21 +434,19 @@ footer{
     }
 
     button#commande {
-        display: flex;
         border-radius: 30px;
         color: white;
         height: 50px;
         justify-content: center;
         background: linear-gradient(to bottom right, #e771da, #a35cdc);
         align-items: center;
-        padding: 20px;
         box-shadow: 5px 5px 5px rgb(206 206 206 / 82%);
-        margin-top: 60px;
-        margin-left: 103vh;
-        margin-bottom: 70px;
-        margin-right: 103vh;
-        width: 30%;
         border: none;
     }
+
+    .content-btn-command {
+        display: flex;
+        justify-content: center;
+      }
 }
 

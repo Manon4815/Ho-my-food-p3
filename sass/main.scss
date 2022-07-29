@@ -68,7 +68,7 @@ h2#Reservation {
 h5#Discover {
     display: flex;
     justify-content: center;
-    margin-left: 50px;
+    margin-left: 36px;
 }
 
 h5#explore {
@@ -358,6 +358,11 @@ footer{
         flex-direction: row;
     }
 
+    
+    h5#Discover {
+        margin-left: 12px;
+    }
+
 }
 
 @media (min-width: 1000px){
@@ -367,6 +372,10 @@ footer{
 
     .link {
         width: 38%;
+    }
+
+    h5#Discover {
+        margin-left: 14px;
     }
 }
 
