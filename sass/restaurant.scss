@@ -421,6 +421,11 @@ footer{
         border-radius: 20px;
     }
 
+    .card-info {
+        h4{
+            margin-bottom: 0;
+        }
+
     .conteneur-menu {
         display: flex;
         justify-content: space-around;
@@ -447,6 +452,7 @@ footer{
     .content-btn-command {
         display: flex;
         justify-content: center;
-      }
+    }
 }
 
+}
