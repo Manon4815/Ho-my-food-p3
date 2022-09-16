@@ -377,17 +377,20 @@ footer {
     padding-top: 20px;
     border-radius: 20px;
   }
-  .conteneur-menu {
+  .card-info h4 {
+    margin-bottom: 0;
+  }
+  .card-info .conteneur-menu {
     display: flex;
     justify-content: space-around;
   }
-  p#commande {
+  .card-info p#commande {
     margin-top: 60px;
     margin-left: 480px;
     margin-bottom: 70px;
     margin-right: 480px;
   }
-  button#commande {
+  .card-info button#commande {
     border-radius: 30px;
     color: white;
     height: 50px;
@@ -397,7 +400,7 @@ footer {
     box-shadow: 5px 5px 5px rgba(206, 206, 206, 0.82);
     border: none;
   }
-  .content-btn-command {
+  .card-info .content-btn-command {
     display: flex;
     justify-content: center;
   }
@@ -655,7 +658,7 @@ i.fa-solid.fa-store:hover {
   background-color: red;
 }
 
-p#new {
+.new {
   background-color: #99e2d0;
   color: #008766;
   position: absolute;
